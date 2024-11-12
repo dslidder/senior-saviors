@@ -5,6 +5,7 @@ import chromadb
 from typing import List, TypedDict
 import json
 import chromadb.utils.embedding_functions as embedding_functions
+from flask import Flask, request
 
 
 class Message(TypedDict):
@@ -38,7 +39,6 @@ conversations: List[Conversation] = [
     conversation2,
     conversation3,
     conversation4,
-    conversation5,
 ]
 
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
@@ -54,6 +54,19 @@ def get_embedding(message: str) -> List[float]:
     )
 
 
+def create_collection(conversation: Conversation):
+    col = chroma.create_collection(
+        name=id(conversation),
+        embedding_function=openai_ef,
+    )
+    for m in conversation["conversation"]:
+        col.add(
+            documents=m["message"],
+            metadatas=[{"sender": m["sender"]}],
+            ids=[m["sender"]],
+        )
+
+
 for idx in range(len(conversations)):
     # create index
     col = chroma.create_collection(
@@ -67,11 +80,16 @@ for idx in range(len(conversations)):
             ids=[m["sender"]],
         )
 
-collection1 = chroma.get_collection("conversation_1")
-result = collection1.query(
-    query_embeddings=[get_embedding("is this a scam?")],
-    query_texts=["is this a scam?"],
-    n_results=2,
-)
 
-print(result)
+def insert_document():
+    data = request.get_json()
+    create_collection(data)
+    return "ok"
+
+
+app = Flask(__name__)
+
+app.route("/", methods=["POST"])
+
+if __name__ == "__main__":
+    app.run(debug=True)
