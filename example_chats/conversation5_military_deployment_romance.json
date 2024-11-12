@@ -1,0 +1,36 @@
+{
+  "conversation": [
+    {
+      "sender": "scammer",
+      "message": "Being here in deployment makes me feel so isolated. It\u2019s hard to communicate without the extra charges."
+    },
+    {
+      "sender": "me",
+      "message": "I understand; it must be really tough for you."
+    },
+    {
+      "sender": "scammer",
+      "message": "It\u2019s just that every call is so expensive. Could you help cover the cost? I\u2019ll make it up to you when I get back."
+    },
+    {
+      "sender": "me",
+      "message": "Yes, I\u2019ll send you some money so we can keep talking."
+    },
+    {
+      "sender": "scammer",
+      "message": "Thank you, darling. You\u2019re my lifeline in all this."
+    },
+    {
+      "sender": "me",
+      "message": "Anything for you. Just stay safe."
+    },
+    {
+      "sender": "scammer",
+      "message": "I will, knowing I have you waiting for me."
+    },
+    {
+      "sender": "me",
+      "message": "I\u2019ll be here for you no matter what."
+    }
+  ]
+}

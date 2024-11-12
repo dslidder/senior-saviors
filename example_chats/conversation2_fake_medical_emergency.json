@@ -1,0 +1,36 @@
+{
+  "conversation": [
+    {
+      "sender": "scammer",
+      "message": "I don\u2019t know how to say this, but my mother is in the hospital and needs surgery immediately."
+    },
+    {
+      "sender": "me",
+      "message": "Oh no, I\u2019m so sorry to hear that. What can I do to help?"
+    },
+    {
+      "sender": "scammer",
+      "message": "I hate to ask, but we\u2019re short on funds. I don\u2019t know where else to turn. Could you lend me $1,500?"
+    },
+    {
+      "sender": "me",
+      "message": "Of course, anything to help."
+    },
+    {
+      "sender": "scammer",
+      "message": "Thank you. I just...I didn\u2019t know who else to ask. You\u2019ve been such a blessing in my life."
+    },
+    {
+      "sender": "me",
+      "message": "I'm happy to support you. Family is everything, right?"
+    },
+    {
+      "sender": "scammer",
+      "message": "You have no idea how much this means. I can\u2019t wait to show my mom who helped her."
+    },
+    {
+      "sender": "me",
+      "message": "I hope she gets better soon. Keep me updated, okay?"
+    }
+  ]
+}

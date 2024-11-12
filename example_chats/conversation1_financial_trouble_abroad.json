@@ -1,0 +1,36 @@
+{
+  "conversation": [
+    {
+      "sender": "scammer",
+      "message": "Hi dear, I\u2019ve been meaning to tell you\u2014I\u2019m here in Nigeria for a work project, and things have taken a turn."
+    },
+    {
+      "sender": "me",
+      "message": "Oh no, what happened?"
+    },
+    {
+      "sender": "scammer",
+      "message": "Someone stole my wallet, and now I\u2019m in a bind with no access to my bank. Could you help me out? I\u2019ll repay you as soon as I\u2019m back."
+    },
+    {
+      "sender": "me",
+      "message": "I\u2019d love to help. How much do you need?"
+    },
+    {
+      "sender": "scammer",
+      "message": "If you could send $1,000, that would be a lifesaver. I promise to pay it back the moment I return."
+    },
+    {
+      "sender": "me",
+      "message": "Alright, I trust you. I\u2019ll send it over."
+    },
+    {
+      "sender": "scammer",
+      "message": "You have no idea how much this means to me. Thank you, my love."
+    },
+    {
+      "sender": "me",
+      "message": "Just stay safe. I\u2019ll be here for you no matter what."
+    }
+  ]
+}
