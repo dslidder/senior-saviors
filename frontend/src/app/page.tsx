@@ -1,6 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogHeader,
+} from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import analyze from "@/lib/analyze";
@@ -32,9 +38,17 @@ export default function Home() {
           }}>
           Analyze
         </Button>
-        <ReactMarkdown className='text-xl' remarkPlugins={[remarkGfm]}>
-          {analysis}
-        </ReactMarkdown>
+        <Dialog open={analysis.length > 0}>
+          <DialogContent>
+            <DialogHeader className='font-semibold text-3xl'>
+              Scam Alert
+            </DialogHeader>
+            <h2 className='text-xl'>
+              You might be at risk of a romance scam.{" "}
+              <span className='text-blue-500'>See more.</span>
+            </h2>
+          </DialogContent>
+        </Dialog>
       </div>
     </main>
   );
