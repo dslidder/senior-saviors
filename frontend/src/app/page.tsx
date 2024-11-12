@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import analyze from "@/lib/analyze";
 import React from "react";
@@ -13,7 +14,7 @@ export default function Home() {
   const [loading, setLoading] = React.useState(false);
 
   return (
-    <main className='h-screen grid place-items-center'>
+    <main className='min-h-screen grid place-items-center py-20'>
       <div className='w-1/2 flex flex-col gap-2'>
         <h1 className='text-3xl font-semibold'>Analyze Conversation</h1>
         <Textarea
