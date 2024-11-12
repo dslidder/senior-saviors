@@ -1,0 +1,32 @@
+{
+  "conversation": [
+    {
+      "sender": "scammer",
+      "message": "I just found out I\u2019m the heir to a large inheritance, but I need a small fee to access it."
+    },
+    {
+      "sender": "me",
+      "message": "Really? That\u2019s amazing! How much do you need?"
+    },
+    {
+      "sender": "scammer",
+      "message": "Just $2,000 to cover legal fees. Once I have it, I\u2019ll get $500,000 and we can start a life together."
+    },
+    {
+      "sender": "me",
+      "message": "I\u2019d love to help. I trust you."
+    },
+    {
+      "sender": "scammer",
+      "message": "You\u2019re a dream come true. Once this is done, we\u2019ll never have to worry about money again."
+    },
+    {
+      "sender": "me",
+      "message": "I\u2019m so glad I met you. I\u2019ll send the money now."
+    },
+    {
+      "sender": "scammer",
+      "message": "Thank you. We\u2019re one step closer to our future together."
+    }
+  ]
+}
