@@ -1,7 +1,7 @@
 {
   "conversation": [
     {
-      "sender": "scammer",
+      "sender": "scammer3",
       "message": "I feel like we\u2019re meant to be together. What if I came to visit you?"
     },
     {
@@ -9,7 +9,7 @@
       "message": "Really? I\u2019d love that!"
     },
     {
-      "sender": "scammer",
+      "sender": "scammer3",
       "message": "There\u2019s just one thing. My ticket is more expensive than I thought. If you could help with the flight, I can cover the rest when I get there."
     },
     {
@@ -17,7 +17,7 @@
       "message": "No problem, I\u2019ll help with the ticket."
     },
     {
-      "sender": "scammer",
+      "sender": "scammer3",
       "message": "You have no idea how happy you\u2019re making me! Just a bit more, and I\u2019ll be there in your arms."
     },
     {
@@ -25,7 +25,7 @@
       "message": "I\u2019m so excited! Just let me know how much to send."
     },
     {
-      "sender": "scammer",
+      "sender": "scammer3",
       "message": "About $1,200 should cover it. I can\u2019t wait to finally meet you, my love."
     },
     {

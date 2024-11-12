@@ -6,6 +6,7 @@ from typing import List, TypedDict
 import json
 import chromadb.utils.embedding_functions as embedding_functions
 
+
 class Message(TypedDict):
     sender: str
     message: str
@@ -41,21 +42,36 @@ conversations: List[Conversation] = [
 ]
 
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
-                api_key=os.getenv("OPENAI_API_KEY"),
-                model_name="text-embedding-3-small"
-            )
+    api_key=os.getenv("OPENAI_API_KEY"), model_name="text-embedding-3-small"
+)
+
 
 def get_embedding(message: str) -> List[float]:
-    return openai.embeddings.create(input=[message], model="text-embedding-3-small").data[0].embedding
-
+    return (
+        openai.embeddings.create(input=[message], model="text-embedding-3-small")
+        .data[0]
+        .embedding
+    )
 
 
 for idx in range(len(conversations)):
     # create index
-    chroma.create_collection(
+    col = chroma.create_collection(
         name=f"conversation_{idx+1}",
         embedding_function=openai_ef,
-        metadatas=[{"source": "openai"}],
     )
     for m in conversations[idx]["conversation"]:
-        
+        col.add(
+            documents=m["message"],
+            metadatas=[{"sender": m["sender"]}],
+            ids=[m["sender"]],
+        )
+
+collection1 = chroma.get_collection("conversation_1")
+result = collection1.query(
+    query_embeddings=[get_embedding("is this a scam?")],
+    query_texts=["is this a scam?"],
+    n_results=2,
+)
+
+print(result)
