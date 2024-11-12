@@ -10,6 +10,8 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import analyze from "@/lib/analyze";
+import insertDocument from "@/lib/insert";
+import { DialogTitle, DialogTrigger } from "@radix-ui/react-dialog";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -34,12 +36,15 @@ export default function Home() {
           onClick={async () => {
             setLoading(true);
             setAnalysis((await analyze(text)) || "");
+            insertDocument(JSON.parse(text));
             setLoading(false);
           }}>
           Analyze
         </Button>
-        <Dialog open={analysis.length > 0}>
+        <Dialog>
+          <DialogTrigger>See more</DialogTrigger>
           <DialogContent>
+            <DialogTitle className='aria-hidden'>Scam Alert</DialogTitle>
             <DialogHeader className='font-semibold text-3xl'>
               Scam Alert
             </DialogHeader>
@@ -49,6 +54,9 @@ export default function Home() {
             </h2>
           </DialogContent>
         </Dialog>
+        <ReactMarkdown className='text-xl' remarkPlugins={[remarkGfm]}>
+          {analysis}
+        </ReactMarkdown>
       </div>
     </main>
   );
